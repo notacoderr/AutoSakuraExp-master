@@ -21,7 +21,7 @@ class leTask extends Task{
 		    $ctime = $this->main->microtime_int();
 			foreach($this->main->players as $name => $ptime)
 			{
-			$stayed = $ptime - $ctime; //check long the player is online (in seconds).
+			$stayed = $ctime - $ptime; //check long the player is online (in seconds).
 			if(($stayed / 60) >= $stayReq) //converts that in minute then check if that is enough.
 			{
 				$hooman = $this->main->getServer()->getPlayerExact($name);
