@@ -22,17 +22,17 @@ class leTask extends Task{
 			foreach($this->main->players as $name => $ptime)
 			{
 			$stayed = $ctime - $ptime; //check long the player is online (in seconds).
-			if(($stayed / 60) >= $stayReq) //converts that in minute then check if that is enough.
+			if($stayed >= $stayReq) //then check if that is enough.
 			{
 				$hooman = $this->main->getServer()->getPlayerExact($name);
-				if($hooman instanceof Player) {
+				if($hooman instanceof \pocketmine\Player) {
 				    $this->main->core->data->addVal($hooman, "exp", $this->main->exp);
 				    $hooman->sendMessage("§l§cS A K U R A ❯ You got ". $this->main->exp. " exp for being active!");
 				    $this->main->players[$name] = $ctime;
 				}
 			}
 			}
-			$this->main->getServer()->broadcastMessage("§l§cS A K U R A ❯ §7All players that are online for {$stayReq} minutes got free exp! Stay online!");
+			$this->main->getServer()->broadcastMessage("§l§cS A K U R A ❯ §7All players that are online for ". (int) $stayReq / 60 . " minute(s) got free exp! Stay online!");
 		}
 	}
 }
