@@ -1,0 +1,6 @@
+# Example → must_stay_for: 30 | players should stay online for 30 minutes
+must_stay_for: 30
+experience:
+  type: "random" #random or fixed
+  amount_fixed: 56
+  amount_random: "43:56"

@@ -1,0 +1,6 @@
+name: AutoExperience
+version: 1.0.1
+main: Sakura\AE\leMain
+api: [3.5.0]
+description: A simple plugin that can automatically gives my server exp
+author: ItzCodeeeh
